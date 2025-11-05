@@ -250,7 +250,11 @@ function Echart(
         chartOverrides,
       );
 
-      chartRef.current?.setOption(themedEchartOptions, true);
+      // Changed from `true` (notMerge: true) to `false` (notMerge: false)
+      // to enable ECharts animations when data updates.
+      // When notMerge is false, ECharts merges new options with existing ones,
+      // allowing it to detect changes and animate transitions smoothly.
+      chartRef.current?.setOption(themedEchartOptions, false);
     }
   }, [didMount, echartOptions, eventHandlers, zrEventHandlers, theme, vizType]);
 
