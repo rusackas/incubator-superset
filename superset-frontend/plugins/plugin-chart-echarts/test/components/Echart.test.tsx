@@ -55,6 +55,7 @@ const defaultProps = {
   },
   eventHandlers: {},
   selectedValues: {},
+  refs: {},
 };
 
 describe('Echart component', () => {
